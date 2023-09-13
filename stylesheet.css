@@ -1,0 +1,19 @@
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.form-input {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+
+.form-input p {
+    margin-right: 5px;
+}
+
+.form-input input {
+    margin-right: 5px;
+}
