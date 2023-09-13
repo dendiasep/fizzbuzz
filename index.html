@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Get a FizzBuzz Result!</h1>
+        </header>
+        <div class="form">
+            <div class="form-input">
+                <p>Type a number: </p>
+                <input id="number">
+                <button type="button" onclick="fungsiku()">Click here!</button>
+
+                <script>
+                  function fungsiku() {
+                    let x =document.getElementById("number").value;
+
+                    let text;
+                    if (x % 3 === 0 && x % 5 === 0) {
+                      text = "FizzBuzz";
+                    } else if (x % 3 === 0) {
+                      text = ("Fizz");
+                    } else if (x % 5 === 0) {
+                      text = ("Buzz");
+                    }  else if (isNaN(x) || x < 1) {
+                      text = "Invalid input";
+                    } else {
+                      text = x;
+                    }
+
+                    document.getElementById("result").innerHTML = text;
+                  }
+                </script>
+            </div>
+            <p id="result"></p>
+          </div>
+    </body>
