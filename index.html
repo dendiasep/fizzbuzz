@@ -24,15 +24,15 @@
                     let text;
                     if (isNaN(x) || x < 1) {
                       text = "Invalid input";
-                    } else if (x % 3 === 0) {
+                    } else if (x % 3 === 0 && x % 5 === 0) {
+                      text = "FizzBuzz";
+                    }  else if (x % 3 === 0) {
                       text = ("Fizz");
                     } else if (x % 5 === 0) {
                       text = ("Buzz");
-                    }  else if (x % 3 === 0 && x % 5 === 0) {
-                      text = "FizzBuzz";
                     } else {
                       text = x;
-                    }
+                    } 
 
                     document.getElementById("result").innerHTML = text;
                   }
