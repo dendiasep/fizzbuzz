@@ -21,31 +21,32 @@
                   const button = document.getElementById("button");
                   
                   button.addEventListener("click", function () {
-                    const input = document.getElementById("number");
-                    const value = parseInt(input.value);
-                    let x = value;
-                    console.log(value);
-                    if (value === 0 || isNaN(x)) {
+                    const x = document.getElementById("number").value;
+                   
+                    console.log(x);
+                    if (isNaN(x) || x < 1) {
+                      
                       const outhtml = document.createElement("p");
                       outhtml.textContent = "Invalid input";
                       outhtml.style.color = "red";
                       result.appendChild(outhtml);
 
                     } else {
-                      if (value % 3 === 0 && value % 5 === 0) {
-                        x = "FizzBuzz";
+                      if (x % 3 === 0 && x % 5 === 0) {
+                        text = "FizzBuzz";
                         console.log("FizzBuzz");
-                      } else if (value % 3 === 0) {
-                        x = "Fizz";
+                      } else if (x % 3 === 0) {
+                        text = "Fizz";
                         console.log("Fizz");
-                      } else if (value % 5 === 0) {
-                        x = "Buzz";
+                      } else if (x % 5 === 0) {
+                        text = "Buzz";
                         console.log("Buzz");
                       } else {
-                        console.log(value);
+                        text = x
+                        console.log(x);
                       }
                       const outhtml = document.createElement("p");
-                      outhtml.textContent = x;
+                      outhtml.textContent = text;
                       outhtml.style.color = "black";
                       result.appendChild(outhtml);
                     }
