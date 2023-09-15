@@ -15,29 +15,44 @@
             <div class="form-input">
                 <p>Type a number: </p>
                 <input id="number">
-                <button type="button" onclick="fungsiku()">Click here!</button>
+                <button type="button" id= "button" >Click here!</button>
 
                 <script>
-                  function fungsiku() {
-                    let x =document.getElementById("number").value;
+                  const button = document.getElementById("button");
+                  
+                  button.addEventListener("click", function () {
+                    const input = document.getElementById("number");
+                    const value = parseInt(input.value);
+                    let x = value;
+                    console.log(value);
+                    if (value === 0 || isNaN(x)) {
+                      const outhtml = document.createElement("p");
+                      outhtml.textContent = "Invalid input";
+                      outhtml.style.color = "red";
+                      result.appendChild(outhtml);
 
-                    let text;
-                    if (isNaN(x) || x < 1) {
-                      text = "Invalid input";
-                    } else if (x % 3 === 0 && x % 5 === 0) {
-                      text = "FizzBuzz";
-                    }  else if (x % 3 === 0) {
-                      text = ("Fizz");
-                    } else if (x % 5 === 0) {
-                      text = ("Buzz");
                     } else {
-                      text = x;
-                    } 
-
-                    document.getElementById("result").innerHTML = text;
-                  }
-                </script>
+                      if (value % 3 === 0 && value % 5 === 0) {
+                        x = "FizzBuzz";
+                        console.log("FizzBuzz");
+                      } else if (value % 3 === 0) {
+                        x = "Fizz";
+                        console.log("Fizz");
+                      } else if (value % 5 === 0) {
+                        x = "Buzz";
+                        console.log("Buzz");
+                      } else {
+                        console.log(value);
+                      }
+                      const outhtml = document.createElement("p");
+                      outhtml.textContent = x;
+                      outhtml.style.color = "black";
+                      result.appendChild(outhtml);
+                    }
+                  });</script>
             </div>
             <p id="result"></p>
+            
+            
           </div>
     </body>
